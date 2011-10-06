@@ -157,6 +157,11 @@ vim_plugin_task "puppet",           "git://github.com/ajf/puppet-vim.git"
 vim_plugin_task "scala",            "git://github.com/bdd/vim-scala.git"
 vim_plugin_task "gist-vim",         "git://github.com/mattn/gist-vim.git"
 
+vim_plugin_task "EasyMotion",       "git://github.com/Lokaltog/vim-easymotion.git"
+vim_plugin_task "sparkup",          "git://github.com/rstacruz/sparkup.git"
+vim_plugin_task "tComment",         "git://github.com/tomtom/tcomment_vim.git"
+#vim_plugin_task "VAM",              "git://github.com/MarcWeber/vim-addon-manager.git"
+
 #vim_plugin_task "hammer",           "git://github.com/robgleeson/hammer.vim.git" do
 #  sh "gem install github-markup redcarpet"
 #end

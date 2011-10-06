@@ -137,7 +137,12 @@ runtime! macros/matchit.vim
 " Show (partial) command in the status line
 set showcmd
 
+" Add the vim addon manager and associated plugins
+"if filereadable(expand("~/.vim/.vim_addon_manager.sh"))
+"  source ~/.vim/.vim_addon_manager.sh
+"endif
+
 " Include user's local vim config
-if filereadable(expand("~/.vimrc.local"))
-  source ~/.vimrc.local
+if filereadable(expand("~/.gvimrc.local"))
+  source ~/.gvimrc.local
 endif

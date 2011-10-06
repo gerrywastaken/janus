@@ -1,9 +1,9 @@
-if has("gui_macvim")
+"if has("gui_macvim")
   " Fullscreen takes up entire screen
-  set fuoptions=maxhorz,maxvert
+ " set fuoptions=maxhorz,maxvert
 
   " Command-T for CommandT
-  macmenu &File.New\ Tab key=<D-T>
+  "macmenu &File.New\ Tab key=<D-T>
   map <D-t> :CommandT<CR>
   imap <D-t> <Esc>:CommandT<CR>
 
@@ -60,7 +60,7 @@ if has("gui_macvim")
   " Adjust viewports to the same size
   map <Leader>= <C-w>=
   imap <Leader>= <Esc> <C-w>=
-endif
+"endif
 
 " Don't beep
 set visualbell
