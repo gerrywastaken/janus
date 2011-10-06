@@ -63,7 +63,7 @@
 "endif
 
 " Don't beep
-set visualbell
+" set visualbell
 
 " Start without the toolbar
 set guioptions-=T
