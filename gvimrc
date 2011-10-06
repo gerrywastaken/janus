@@ -216,7 +216,7 @@ function Edit(file)
 	if home || Regexp.new("^" + Regexp.escape(pwd)) !~ destination
 		VIM.command(%{call ChangeDirectory(fnamemodify(a:file, ":h"), 0)})
 	end
-	RUBY
+RUBY
 endfunction
 
 " Define the NERDTree-aware aliases
@@ -232,3 +232,4 @@ endif
 if filereadable(expand("~/.gvimrc.local"))
 	source ~/.gvimrc.local
 endif
+

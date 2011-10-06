@@ -48,19 +48,19 @@ map <C-\> :tnext<CR>
 
 " Remember last location in file
 if has("autocmd")
-  au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$")
-    \| exe "normal g'\"" | endif
+	au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$")
+				\| exe "normal g'\"" | endif
 endif
 
 function s:setupWrapping()
-  set wrap
-  set wrapmargin=2
-  set textwidth=72
+	set wrap
+	set wrapmargin=2
+	set textwidth=72
 endfunction
 
 function s:setupMarkup()
-  call s:setupWrapping()
-  map <buffer> <Leader>p :Hammer<CR>
+	call s:setupWrapping()
+	map <buffer> <Leader>p :Hammer<CR>
 endfunction
 
 " Thorfile, Rakefile, Vagrantfile and Gemfile are Ruby
@@ -99,7 +99,7 @@ nmap <C-Down> ]e
 
 " Shortcut to rapidly toggle `set list`
 nmap <leader>l :set list!<CR>
- 
+
 " Use the same symbols as TextMate for tabstops and EOLs
 set listchars=tab:▸\ ,eol:¬
 
@@ -115,9 +115,9 @@ let g:syntastic_quiet_warnings=1
 
 " gist-vim defaults
 if has("mac")
-  let g:gist_clip_command = 'pbcopy'
+	let g:gist_clip_command = 'pbcopy'
 elseif has("unix")
-  let g:gist_clip_command = 'xclip -selection clipboard'
+	let g:gist_clip_command = 'xclip -selection clipboard'
 endif
 let g:gist_detect_filetype = 1
 let g:gist_open_browser_after_post = 1
@@ -152,5 +152,5 @@ set showcmd
 
 " Include user's local vim config
 if filereadable(expand("~/.gvimrc.local"))
-  source ~/.gvimrc.local
+	source ~/.gvimrc.local
 endif
