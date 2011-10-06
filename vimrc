@@ -97,9 +97,18 @@ cmap <C-P> <C-R>=expand("%:p:h") . "/" <CR>
 " Bubble single lines
 nmap <C-Up> [e
 nmap <C-Down> ]e
+
+" Shortcut to rapidly toggle `set list`
+nmap <leader>l :set list!<CR>
+ 
+" Use the same symbols as TextMate for tabstops and EOLs
+set listchars=tab:▸\ ,eol:¬
+
 " Bubble multiple lines
 vmap <C-Up> [egv
 vmap <C-Down> ]egv
+
+
 
 " Enable syntastic syntax checking
 let g:syntastic_enable_signs=1
