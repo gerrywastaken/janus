@@ -150,7 +150,16 @@ set showcmd
 "  source ~/.vim/.vim_addon_manager.sh
 "endif
 
+set guifont=Monaco10px
+set linespace=1
+
+" run file with PHP CLI (CTRL-M)
+:autocmd FileType php noremap <C-M> :w!<CR>:!/usr/local/bin/php %<CR>
+
+" PHP parser check (CTRL-L)
+:autocmd FileType php noremap <C-L> :!/usr/local/bin/php -l %<CR>
+
 " Include user's local vim config
-if filereadable(expand("~/.gvimrc.local"))
-	source ~/.gvimrc.local
+if filereadable(expand("~/.vim/vimrc.local"))
+	source ~/.vim/vimrc.local
 endif
