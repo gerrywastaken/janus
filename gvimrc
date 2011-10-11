@@ -2,8 +2,13 @@
 " Fullscreen takes up entire screen
 " set fuoptions=maxhorz,maxvert
 
+set guioptions=aAcei " Remove scrollbars and menubar
+set guioptions+=lrb
+set guioptions-=lrb
+
 " Command-T for CommandT
 "macmenu &File.New\ Tab key=<D-T>
+map <Leader>t :CommandT<CR>
 map <D-t> :CommandT<CR>
 imap <D-t> <Esc>:CommandT<CR>
 
@@ -66,10 +71,11 @@ imap <Leader>= <Esc> <C-w>=
 " set visualbell
 
 " Start without the toolbar
-set guioptions-=T
+"set guioptions-=T
 
 " Default gui color scheme
-color ir_black
+"color ir_black
+color wombat
 
 " ConqueTerm wrapper
 function StartTerm()
@@ -82,7 +88,14 @@ if exists("loaded_nerd_tree")
 	autocmd VimEnter * call s:CdIfDirectory(expand("<amatch>"))
 	autocmd FocusGained * call s:UpdateNERDTree()
 	autocmd WinEnter * call s:CloseIfOnlyNerdTreeLeft()
+	autocmd VimEnter * call s:ReloadLinesAndCols()
 endif
+
+function s:ReloadLinesAndCols()
+	:sleep 1
+	set lines=48
+	set columns=160
+endfunction
 
 " Close all open buffers on entering a window if the only
 " buffer that's left is the NERDTree buffer

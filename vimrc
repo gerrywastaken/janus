@@ -24,6 +24,12 @@ set smartcase
 set wildmode=list:longest,list:full
 set wildignore+=*.o,*.obj,.git,*.rbc,*.class,.svn,vendor/gems/*
 
+"folding settings
+set foldmethod=indent   "fold based on indent
+set foldnestmax=10      "deepest fold is 10 levels
+set nofoldenable        "dont fold by default
+set foldlevel=1         "this is just what i use
+
 " Status bar
 set laststatus=2
 
@@ -31,6 +37,9 @@ set laststatus=2
 " equalalways behavior to be triggered the next time CommandT is used.
 " This is likely a bludgeon to solve some other issue, but it works
 set noequalalways
+
+" Remap jj to <ESC>
+imap jj <ESC>
 
 " NERDTree configuration
 let NERDTreeIgnore=['\.pyc$', '\.rbc$', '\~$']
@@ -103,6 +112,8 @@ nmap <leader>l :set list!<CR>
 " Use the same symbols as TextMate for tabstops and EOLs
 set listchars=tab:▸\ ,eol:¬
 
+:set nolist
+
 " Bubble multiple lines
 vmap <C-Up> [egv
 vmap <C-Down> ]egv
@@ -129,6 +140,7 @@ set modelines=10
 " Default color scheme
 color desert
 
+
 " Directories for swp files
 set backupdir=~/.vim/backup
 set directory=~/.vim/backup
@@ -150,14 +162,14 @@ set showcmd
 "  source ~/.vim/.vim_addon_manager.sh
 "endif
 
-set guifont=Monaco10px
-set linespace=1
+set guifont=Monaco\ 10
+set linespace=6
 
 " run file with PHP CLI (CTRL-M)
-:autocmd FileType php noremap <C-M> :w!<CR>:!/usr/local/bin/php %<CR>
+" :autocmd FileType php noremap <C-M> :w!<CR>:!/usr/local/bin/php %<CR>
 
 " PHP parser check (CTRL-L)
-:autocmd FileType php noremap <C-L> :!/usr/local/bin/php -l %<CR>
+" :autocmd FileType php noremap <C-L> :!/usr/local/bin/php -l %<CR>
 
 " Include user's local vim config
 if filereadable(expand("~/.vim/vimrc.local"))
